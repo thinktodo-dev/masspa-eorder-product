@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './styles.module.css'
-
+import StarIcon from "./images/star.svg"
+import StarDefaultIcon from "./images/star_default.svg"
+import ShoppingCartIcon from "./images/shopping-cart.svg"
 export default class ExampleComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -16,16 +18,19 @@ export default class ExampleComponent extends React.Component {
       quantity: newValue
     })
   }
+  orderAction = () => {
+    if(this.props.orderAction) this.props.orderAction({quantity: this.state.quantity})
+  }
   render() {
-  let {title, imageUrl = [], imagesReview= [], titleBottom, madeIn, price, featureList, stars = 0, sku} = this.props
+  let {title,  madeIn, price, featureList, stars = 0, sku} = this.props
   let {quantity} = this.state
   return <div className={styles.productContent}>
       <div className={styles.headerContent}>
         <h1 className={styles.title}>{title || "SAN PHAM"}</h1>
       </div>
       {stars > 0 && Array.from("12345").map((e, index) => {
-        if(index < stars) return <img  className={styles.star} src={"./images/star.svg"}></img>
-        else return <img className={styles.star} src={"./images/star_default.svg"}></img>
+        if(index < stars) return <img  className={styles.star} src={StarIcon}></img>
+        else return <img className={styles.star} src={StarDefaultIcon}></img>
       })}
       <div className={styles.brand} > {madeIn ? <p  className={styles.brand}>Brand: {madeIn}</p> : ""}
       {sku ? <span className={styles.sku} >SKU: {sku}</span> : ""}
@@ -46,7 +51,7 @@ export default class ExampleComponent extends React.Component {
           <input  className={styles.inputQuantity} value={quantity}/>
           <button className={styles.quantity} onClick = {() => this.changeQuantity("increase")}>+</button>
         </div> 
-        <button className={styles.buttonOrder}><img className={styles.shoppingCart} src={"./images/shopping-cart.svg"}></img>CHỌN MUA</button>
+        <button className={styles.buttonOrder} onClick = {() => this.orderAction()}><img className={styles.shoppingCart} src={ShoppingCartIcon}></img>CHỌN MUA</button>
       </div>
     </div> 
 }
