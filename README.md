@@ -24,6 +24,18 @@ class Example extends Component {
   }
 }
 ```
+## Properties
+
+Prop | description 
+--- | --- 
+*description* | `HTML` 
+title | title of product
+madeIn | made in  
+price | price of product   
+featureList | array of feature   
+stars | number of stars  
+sku | SKU
+orderAction | action order button
 
 ## License
 

@@ -25,26 +25,28 @@ export default class ExampleComponent extends React.Component {
   let {title,  madeIn, price, featureList, stars = 0, sku} = this.props
   let {quantity} = this.state
   return <div className={styles.productContent}>
-      <div className={styles.headerContent}>
-        <h1 className={styles.title}>{title || "SAN PHAM"}</h1>
+      {title && <div className={styles.headerContent}>
+        <h1 className={styles.title}>{title}</h1>
       </div>
+      }
       {stars > 0 && Array.from("12345").map((e, index) => {
         if(index < stars) return <img  className={styles.star} src={StarIcon}></img>
         else return <img className={styles.star} src={StarDefaultIcon}></img>
       })}
-      <div className={styles.brand} > {madeIn ? <p  className={styles.brand}>Brand: {madeIn}</p> : ""}
+      <div className={styles.brand} > 
+      {madeIn && <p  className={styles.brand}>Brand: {madeIn}</p>}
       {sku ? <span className={styles.sku} >SKU: {sku}</span> : ""}
       </div> 
       {price ? <p className={styles.price}>{price}</p> : ""}
       {featureList && 
       <ul>
         <li  className={styles.featureItem}>THÔNG SỐ KỸ THUẬT</li>
-      {featureList.map((feature, index) => {
-        return(
-          <li className={styles.featureItem}>{feature}</li>
-        )
-      })} 
-    </ul>}
+          {featureList.map((feature, index) => {
+            return(
+              <li className={styles.featureItem}>{feature}</li>
+            )
+          })} 
+      </ul>}
       <div className={styles.buttonGroup}>
         <div className={styles.quanlityInput}>  
           <button className={styles.quantity} onClick = {() => this.changeQuantity("decrease")}>-</button>
