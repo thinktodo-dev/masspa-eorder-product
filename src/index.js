@@ -22,9 +22,9 @@ export default class ExampleComponent extends React.Component {
     if(this.props.orderAction) this.props.orderAction({quantity: this.state.quantity})
   }
   render() {
-  let {title,  madeIn, price, featureList, stars = 0, sku} = this.props
+  let {title,  madeIn, price, featureList, stars = 0, sku, fontFamily= "unset"} = this.props
   let {quantity} = this.state
-  return <div className={styles.productContent}>
+  return <div className={styles.productContent} style = {{fontFamily: fontFamily}}>
       {title && <div className={styles.headerContent}>
         <h1 className={styles.title}>{title}</h1>
       </div>

@@ -36,6 +36,7 @@ featureList | array of feature
 stars | number of stars  
 sku | SKU
 orderAction | action order button
+fontFamily | font-family
 
 ## License
 
