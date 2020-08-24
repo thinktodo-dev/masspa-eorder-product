@@ -33,13 +33,13 @@ export default class ExampleComponent extends React.Component {
         if(index < stars) return <img  className={styles.star} src={StarIcon}></img>
         else return <img className={styles.star} src={StarDefaultIcon}></img>
       })}
-      <div className={styles.brand} > 
+      <div className={styles.brandBox} > 
       {madeIn && <p  className={styles.brand}>Brand: {madeIn}</p>}
       {sku ? <span className={styles.sku} >SKU: {sku}</span> : ""}
       </div> 
       {price ? <p className={styles.price}>{price}</p> : ""}
       {featureList && 
-      <ul>
+      <ul className = {style.featureList}>
         <li  className={styles.featureItem}>THÔNG SỐ KỸ THUẬT</li>
           {featureList.map((feature, index) => {
             return(

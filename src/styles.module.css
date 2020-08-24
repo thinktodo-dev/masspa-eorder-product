@@ -127,12 +127,15 @@ align-items: center;
 }
 .inputQuantity {
   text-align: center;
-  height: 34px;
+  height: 40px;
   width: 40px;
   background-color: #0000000d;
   border-color: #0000000f;
- border-left: none;
- border-right: none;
+  box-sizing: border-box;
+}
+.featureList {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
 }
 .star {
   width: 24px;
@@ -153,12 +156,14 @@ align-items: center;
   width: 20px;
     margin-right: 8px;
 }
-.brand {
+.brandBox {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 20px;
-
+  margin: 1rem 0 20px;
+}
+.brand {
+  margin: 0
 }
 .sku {
     color: rgb(155, 155, 155);
