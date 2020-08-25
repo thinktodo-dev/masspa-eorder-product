@@ -14,12 +14,19 @@ export default class ExampleComponent extends React.Component {
     let newValue = this.state.quantity
     if(action == "decrease") newValue = newValue -1
     else newValue = newValue + 1
+    if(newValue < 0 ) newValue = 0
     this.setState({
       quantity: newValue
     })
   }
   orderAction = () => {
     if(this.props.orderAction) this.props.orderAction({quantity: this.state.quantity})
+  }
+  changeInputQuantity = (e) => {
+    let newValue = Number(e.target.value)  ? e.target.value : 0
+    this.setState({
+      quantity: newValue
+    })
   }
   render() {
   let {title,  madeIn, price, featureList, stars = 0, sku, fontFamily= "unset"} = this.props
@@ -30,8 +37,8 @@ export default class ExampleComponent extends React.Component {
       </div>
       }
       {stars > 0 && Array.from("12345").map((e, index) => {
-        if(index < stars) return <img  className={styles.star} src={StarIcon}></img>
-        else return <img className={styles.star} src={StarDefaultIcon}></img>
+        if(index < stars) return <img  key = {index} className={styles.star} src={StarIcon}></img>
+        else return <img key = {index} className={styles.star} src={StarDefaultIcon}></img>
       })}
       <div className={styles.brandBox} > 
       {madeIn && <p  className={styles.brand}>Brand: {madeIn}</p>}
@@ -39,18 +46,18 @@ export default class ExampleComponent extends React.Component {
       </div> 
       {price ? <p className={styles.price}>{price}</p> : ""}
       {featureList && 
-      <ul className = {style.featureList}>
-        <li  className={styles.featureItem}>THÔNG SỐ KỸ THUẬT</li>
+      <ul className = {styles.featureList}>
+        {/* <li  className={styles.featureItem}>THÔNG SỐ KỸ THUẬT</li> */}
           {featureList.map((feature, index) => {
             return(
-              <li className={styles.featureItem}>{feature}</li>
+              <li key = {index} className={styles.featureItem}>{feature}</li>
             )
           })} 
       </ul>}
       <div className={styles.buttonGroup}>
         <div className={styles.quanlityInput}>  
           <button className={styles.quantity} onClick = {() => this.changeQuantity("decrease")}>-</button>
-          <input  className={styles.inputQuantity} value={quantity}/>
+          <input  className={styles.inputQuantity} value={quantity} onChange = {this.changeInputQuantity}/>
           <button className={styles.quantity} onClick = {() => this.changeQuantity("increase")}>+</button>
         </div> 
         <button className={styles.buttonOrder} onClick = {() => this.orderAction()}><img className={styles.shoppingCart} src={ShoppingCartIcon}></img>CHỌN MUA</button>

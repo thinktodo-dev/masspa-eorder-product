@@ -9,7 +9,7 @@
   margin-left: auto;
 }
 .headerContent {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .seeMoreImage ,.seeMoreImage>div>img{
   position: relative;
@@ -53,6 +53,7 @@
   color: #fd0a0a;
   font-size: 26px;
   font-weight: 500;
+  margin: 1rem 0;
 }
 .buttonGroup {
   display: flex;
@@ -132,6 +133,8 @@ align-items: center;
   background-color: #0000000d;
   border-color: #0000000f;
   box-sizing: border-box;
+  border-left: none;
+  border-right: none;
 }
 .featureList {
     margin-block-start: 1rem;
@@ -160,10 +163,10 @@ align-items: center;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1rem 0 20px;
+  margin: 1rem 0 1rem;
 }
 .brand {
-  margin: 0
+  margin: 0 1rem 0 0
 }
 .sku {
     color: rgb(155, 155, 155);
