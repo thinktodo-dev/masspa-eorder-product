@@ -120,7 +120,7 @@ align-items: center;
 .quantity {
   outline: none;
   width: 30px;
-  background-color: #0000000d;
+  background-color: #fff;
   height: 30px;
   border-color: #0000000f;
   border: 1px solid rgb(236, 236, 236);
@@ -132,12 +132,20 @@ align-items: center;
 .quantity:focus {
   background-color: #0000000d;
 }
+.quanlityInput button:first-child {
+  border-right: none;
+  border-radius: 4px 0px 0px 4px;
+}
+.quanlityInput button:last-child {
+  border-left: none;
+  border-radius: 0px 4px 4px 0px;
+}
 .inputQuantity {
   outline: none;
   text-align: center;
   height: 30px;
   width: 40px;
-  background-color: #0000000d;
+  background-color: #fff;
   border-color: #0000000f;
   box-sizing: border-box;
   border-left: none;

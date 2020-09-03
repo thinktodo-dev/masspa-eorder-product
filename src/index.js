@@ -63,9 +63,11 @@ export default class ExampleComponent extends React.Component {
       <div className={styles.buttonGroup}>
         <div className={styles.quanlityInput}>  
         <div className={styles.titleQuantity}>Số lượng</div>
-          <button className={styles.quantity} onClick = {() => this.changeQuantity("decrease")}>-</button>
-          <input  className={styles.inputQuantity} value={quantity} onChange = {this.changeInputQuantity}/>
-          <button className={styles.quantity} onClick = {() => this.changeQuantity("increase")}>+</button>
+          <div className={styles.quanlityInput}> 
+            <button className={styles.quantity} onClick = {() => this.changeQuantity("decrease")}>-</button>
+            <input  className={styles.inputQuantity} value={quantity} onChange = {this.changeInputQuantity}/>
+            <button className={styles.quantity} onClick = {() => this.changeQuantity("increase")}>+</button>
+          </div>
         </div> 
         <button style = {customButtomStyle} className={styles.buttonOrder} onClick = {() => this.orderAction()}><img className={styles.shoppingCart} src={ShoppingCartIcon}></img>CHỌN MUA</button>
         {showFavorite && <img className={styles.heartIcon} onClick = {() => this.changeFavorite()}  src={favorite ? HeartIcon : HeartDefaultIcon}></img> }
