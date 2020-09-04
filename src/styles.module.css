@@ -130,6 +130,7 @@ align-items: center;
   background-color: rgb(236, 236, 236)
 }
 .quantity:focus {
+  outline: none;
   background-color: #0000000d;
 }
 .quanlityInput button:first-child {
@@ -177,6 +178,10 @@ align-items: center;
   cursor: pointer;
   font-size: 13px;
   height: 40px;
+  outline: none;
+}
+.buttonOrder:focus {
+  outline: none;
 }
 .titleQuantity {
   color: rgb(123, 123, 123);
