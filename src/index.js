@@ -61,9 +61,9 @@ export default class ExampleComponent extends React.Component {
           })} 
       </ul>}
       <div className={styles.buttonGroup}>
-        <div className={styles.quanlityInput}>  
+        <div className={styles.eorder_quanlityInput}>  
         <div className={styles.titleQuantity}>Số lượng</div>
-          <div className={styles.quanlityInput}> 
+          <div className={styles.eorder_quanlityInput}> 
             <button className={styles.quantity} onClick = {() => this.changeQuantity("decrease")}>-</button>
             <input  className={styles.inputQuantity} value={quantity} onChange = {this.changeInputQuantity}/>
             <button className={styles.quantity} onClick = {() => this.changeQuantity("increase")}>+</button>

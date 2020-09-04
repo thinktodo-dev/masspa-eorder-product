@@ -60,7 +60,7 @@
   flex-direction: row;
   align-items: flex-end;
 }
-.quanlityInput {
+.eorder_quanlityInput {
   margin-right: 20px;
 }
 .groupImages {
@@ -151,7 +151,7 @@ align-items: center;
   border-left: none;
   border-right: none;
   border: 1px solid rgb(236, 236, 236);
-  font-size: 13x;
+  font-size: 13px;
 
 }
 .inputQuantity:focus {
@@ -191,8 +191,9 @@ align-items: center;
   cursor: pointer;
 }
 .shoppingCart {
-  width: 20px;
+    width: 20px;
     margin-right: 8px;
+    outline: none;
 }
 .brandBox {
   display: flex;
